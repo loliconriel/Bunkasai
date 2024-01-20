@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour
 {
     [SerializeField]
-    SceneAsset TargetScene;
+    private SceneAsset TargetScene;
     [SerializeField]
-    Button ActionButton;
+    private Button ActionButton;
     private void Awake()
     {
         ActionButton.onClick.AddListener(Change);
