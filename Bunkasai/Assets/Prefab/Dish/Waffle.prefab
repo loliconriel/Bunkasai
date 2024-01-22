@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5845039989635195004}
   - component: {fileID: 7725599485986649166}
   - component: {fileID: 883549617732101647}
-  - component: {fileID: 5767215278691660416}
   m_Layer: 5
   m_Name: Waffle
   m_TagString: Untagged
@@ -122,17 +121,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5767215278691660416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339003673456320223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055f83fd8acb21345853c07e52616145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CookTime: 10
-  MuddyTime: 10

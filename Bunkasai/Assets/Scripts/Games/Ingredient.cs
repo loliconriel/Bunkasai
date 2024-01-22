@@ -6,15 +6,17 @@ using UnityEngine.UI;
 public class Ingredient : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Content;
+    protected GameObject Content;
     [SerializeField]
     private GameObject TargetList;
     [SerializeField]
-    private Button ActionButton;
+    private GameObject FinalList;
 
+    protected GameObject TargetCook;
+    protected bool FindCheck;
     private void Awake()
     {
-        if (ActionButton != null) ActionButton.onClick.AddListener(action);
+        GetComponent<Button>().onClick.AddListener(action);
     }
 
     protected virtual void action()
@@ -24,8 +26,11 @@ public class Ingredient : MonoBehaviour
             if (item.childCount == 0)
             {
                 Instantiate(Content, item.transform);
+                TargetCook = item.gameObject;
+                FindCheck = true;
                 break;
             }
+            else FindCheck = false;
         }
     }
 }
