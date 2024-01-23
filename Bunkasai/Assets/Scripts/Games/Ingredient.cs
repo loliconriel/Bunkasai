@@ -8,6 +8,8 @@ public class Ingredient : MonoBehaviour
     [SerializeField]
     protected GameObject Content;
     [SerializeField]
+    protected GameObject FinalContent;
+    [SerializeField]
     private GameObject TargetList;
     [SerializeField]
     protected GameObject FinalList;
