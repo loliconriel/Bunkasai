@@ -10,7 +10,7 @@ public class Ingredient : MonoBehaviour
     [SerializeField]
     private GameObject TargetList;
     [SerializeField]
-    private GameObject FinalList;
+    protected GameObject FinalList;
 
     protected GameObject TargetCook;
     protected bool FindCheck;
@@ -23,7 +23,7 @@ public class Ingredient : MonoBehaviour
     {
         foreach (Transform item in TargetList.transform)
         {
-            if (item.childCount == 0)
+            if (item.childCount <= 1)
             {
                 Instantiate(Content, item.transform);
                 TargetCook = item.gameObject;

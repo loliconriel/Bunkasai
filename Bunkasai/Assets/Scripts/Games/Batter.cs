@@ -11,7 +11,7 @@ public class Batter : Ingredient
     protected override void action()
     {
         base.action();
-        if(FindCheck) TargetCook.GetComponent<Cooker>().SetTime(CookTime, MuddyTime);
+        if(FindCheck) TargetCook.GetComponent<Cooker>().SetDish(CookTime, MuddyTime,FinalList);
 
     }
 }
