@@ -73,7 +73,6 @@ public class Cooker : MonoBehaviour
     }
     public void DoubleClick()
     {
-        if(transform.childCount > 1)
         {
             if (NowTime > MuddyTime)
             {
