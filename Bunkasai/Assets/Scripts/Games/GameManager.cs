@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float TotalTime;
     private float RemainTime;
-    public bool GamePause;
+    public bool GamePlayCheck;
     private void Awake()
     {
         if(instance == null)
@@ -22,16 +22,16 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
         RemainTime = TotalTime;
-        //if (SceneManager.GetActiveScene().name == GamingScene.name) GamePause = true;
-        //else GamePause = false;
-        GamePause = true;
+        //if (SceneManager.GetActiveScene().name == GamingScene.name) GamePlayCheck = true;
+        //else GamePlayCheck = false;
+        GamePlayCheck = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GamePause)
+        if (GamePlayCheck)
         {
             if (RemainTime > 0)
             {
@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
             }
         }
         
+    }
+    public static void GameInit(float TotalTime)
+    {
+        instance.TotalTime = TotalTime;
     }
     public static void Init()
     {
@@ -50,8 +54,12 @@ public class GameManager : MonoBehaviour
     {
         return instance.RemainTime/instance.TotalTime;
     }
-    public static void GameState()
+    public static void PauseGame()
     {
-        instance.GamePause = !instance.GamePause;
+        instance.GamePlayCheck = false;
+    }
+    public static void StartGame()
+    {
+        instance.GamePlayCheck = true;
     }
 }

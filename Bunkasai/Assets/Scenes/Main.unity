@@ -2978,6 +2978,63 @@ MonoBehaviour:
   QuitButton: {fileID: 947152628}
   GamingScene: {fileID: 102900000, guid: 6a41e9073e565ea4186b61cea0f3363d, type: 3}
   SettingPanel: {fileID: 2016054842}
+--- !u!1001 &1411672315
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8779319
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.8242272
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.012169256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885572447192441974, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
+      propertyPath: m_Name
+      value: ManagerTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
 --- !u!1 &1494074551
 GameObject:
   m_ObjectHideFlags: 0
