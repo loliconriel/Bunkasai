@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
     {
         return instance.RemainTime/instance.TotalTime;
     }
+    public static bool StateGame()
+    {
+        return instance.GamePlayCheck;
+    }
     public static void PauseGame()
     {
         instance.GamePlayCheck = false;
