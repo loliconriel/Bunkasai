@@ -353,7 +353,7 @@ MonoBehaviour:
   StayList: {fileID: 1056919163}
   Customer:
   - {fileID: 3704771038601097940, guid: 3b14af969cef23745a49426afcd4fb82, type: 3}
-  SpawnTime: 10
+  SpawnTime: 3.66
 --- !u!1 &33398681
 GameObject:
   m_ObjectHideFlags: 0
