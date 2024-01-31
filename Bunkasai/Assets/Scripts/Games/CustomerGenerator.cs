@@ -39,25 +39,21 @@ public class CustomerGenerator : MonoBehaviour
                 if(counter != StayList.transform.childCount)
                 {
                     int Spawnnumber = Random.Range(0, 2);
-                    int Spawnplace;
-                    do
-                    {
-                        Spawnplace = Random.Range(0, StayList.transform.childCount);
-                    } while (StayList.transform.GetChild(Spawnplace).childCount != 0);
+                    int Spawnindex;
+                    do Spawnindex = Random.Range(0, StayList.transform.childCount); while (StayList.transform.GetChild(Spawnindex).childCount != 0);
+
                     Transform SpawnPlace = SpawnList.transform.GetChild(Spawnnumber).transform;
                     GameObject a = Instantiate(Customer[Random.Range(0, Customer.Length)], SpawnPlace);
-                    a.transform.SetParent(StayList.transform.GetChild(Spawnplace));
+                    a.transform.SetParent(StayList.transform.GetChild(Spawnindex));
                     Customer test = a.AddComponent<Customer>();
-                    Vector3 Speed = StayList.transform.GetChild(1).localPosition - StayList.transform.GetChild(0).localPosition;
+
+                    Vector3 Speed =  new Vector3((StayList.transform.GetChild(1).position.x - StayList.transform.GetChild(0).position.x) /1.5f,0f,0f);
+
                     if (Spawnnumber == 0)
                     {
-                        test.Init(Speed, transform.parent.localPosition, SpawnList.transform.GetChild(1).localPosition);
+                        test.Init(Speed, a.transform.parent.position, SpawnList.transform.GetChild(1).position);
                     }
-                    else test.Init(-Speed, transform.parent.localPosition, SpawnList.transform.GetChild(0).localPosition);
-                }
-                else
-                {
-                    
+                    else test.Init(-Speed, a.transform.parent.position, SpawnList.transform.GetChild(0).position);
                 }
                 
             }
