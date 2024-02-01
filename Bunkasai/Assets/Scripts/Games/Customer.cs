@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Customer : MonoBehaviour
     float LeaveTime = 3f;
     float WaitingTime;
 
+    GameObject OrderPanel;
     public void Init(Vector3 Speed,Vector3 StayPosition,Vector3 EndPosition)
     {
         this.Speed = Speed;
@@ -27,7 +29,7 @@ public class Customer : MonoBehaviour
         this.EndPosition = EndPosition;
         CustomerStatus = Status.Enter;
         WaitingTime = 0f;
-        
+        OrderPanel = transform.GetChild(0).gameObject;
     
     }
 
@@ -47,9 +49,11 @@ public class Customer : MonoBehaviour
         else if(CustomerStatus == Status.Waitng)
         {
             WaitingTime += Time.deltaTime;
+            OrderPanel.transform.GetChild(0).GetComponent<Slider>().value = 1 - (WaitingTime / LeaveTime);
             if (WaitingTime > LeaveTime)
             {
                 CustomerStatus = Status.Leave;
+                Leave();
             }
         }
         else
@@ -66,8 +70,12 @@ public class Customer : MonoBehaviour
     }
     private void Order()
     {
-
+        OrderPanel.SetActive(true);
+        int RandomDish = Random.Range(0, 2);
     }
-
+    private void Leave()
+    {
+        OrderPanel.SetActive(false);
+    }
 
 }
