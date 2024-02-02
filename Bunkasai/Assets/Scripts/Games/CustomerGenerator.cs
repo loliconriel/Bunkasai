@@ -14,6 +14,15 @@ public class CustomerGenerator : MonoBehaviour
     private GameObject[] Customer;
     [SerializeField]
     private float SpawnTime;
+    [SerializeField]
+    private List<GameObject> Dish;
+    [SerializeField]
+    private List<GameObject> DishTopping;
+    [SerializeField]
+    private List<GameObject> Drink;
+    [SerializeField]
+    private List<GameObject> DrinkTopping;
+    
     private float Timer;
     private void Start()
     {
@@ -48,7 +57,7 @@ public class CustomerGenerator : MonoBehaviour
                     Customer test = a.AddComponent<Customer>();
 
                     Vector3 Speed =  new Vector3((StayList.transform.GetChild(1).position.x - StayList.transform.GetChild(0).position.x) /1.5f,0f,0f);
-
+                    Order(a.transform.GetChild(0).GetChild(1).gameObject);
                     if (Spawnnumber == 0)
                     {
                         test.Init(Speed, a.transform.parent.position, SpawnList.transform.GetChild(1).position);
@@ -60,6 +69,50 @@ public class CustomerGenerator : MonoBehaviour
         }
         
     }
+    private void Order(GameObject OrderList)
+    {
 
+        int FirstDish = Random.Range(0, 2);
+        GameObject Dish1;
+        if (FirstDish == 0)
+        {
+            Dish1 = Instantiate(Dish[Random.Range(0, Dish.Count)],OrderList.transform);
+            foreach (GameObject Topping in DishTopping)
+            {
+                if (Random.Range(0, 2) == 1) Instantiate(Topping,Dish1.transform);
+            }
+        }
+        else
+        {
+            Dish1 = Instantiate(Drink[Random.Range(0, Drink.Count)], OrderList.transform);
+        }
+        if (Random.Range(0, 2) == 1)
+        {
+            GameObject Dish2;
+            if(FirstDish == 0)
+            {
+                Dish2 = Instantiate(Drink[Random.Range(0, Drink.Count)], OrderList.transform);
+            }
+            else
+            {
+                Dish2 = Instantiate(Dish[Random.Range(0, Dish.Count)], OrderList.transform);
+                foreach (GameObject Topping in DishTopping)
+                {
+                    if (Random.Range(0, 2) == 1) Instantiate(Topping, Dish2.transform);
+                }
+            }
+            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
+            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.4f);
+            Dish2.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.5f);
+            Dish2.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.9f);
+
+        }
+        else
+        {
+            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
+            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.9f);
+        }
+        
+    }
     
 }

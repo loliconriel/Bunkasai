@@ -33,9 +33,10 @@ public class GameManager : MonoBehaviour
     {
         if (GamePlayCheck)
         {
-            if (RemainTime > 0)
+            RemainTime -= Time.deltaTime;
+            if (RemainTime <= 0f)
             {
-                RemainTime -= Time.deltaTime;
+                PauseGame();
             }
         }
         

@@ -18,7 +18,7 @@ public class Customer : MonoBehaviour
 
     Status CustomerStatus;
 
-    float LeaveTime = 3f;
+    float LeaveTime = 10f;
     float WaitingTime;
 
     GameObject OrderPanel;
@@ -55,6 +55,18 @@ public class Customer : MonoBehaviour
                 CustomerStatus = Status.Leave;
                 Leave();
             }
+            for(int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++)
+            {
+                if (transform.GetChild(0).GetChild(1).GetChild(i).name != "Success(Clone)")
+                {
+                    break;
+                }
+                if(i == transform.GetChild(0).GetChild(1).childCount - 1)
+                {
+                    CustomerStatus = Status.Leave;
+                    Leave();
+                }
+            }
         }
         else
         {
@@ -71,11 +83,24 @@ public class Customer : MonoBehaviour
     private void Order()
     {
         OrderPanel.SetActive(true);
-        int RandomDish = Random.Range(0, 2);
+        for (int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++){
+            CustomerOrder.Add(transform.parent.GetSiblingIndex(), transform.GetChild(0).GetChild(1).GetChild(i).gameObject);
+        }
+        
     }
     private void Leave()
     {
+        for (int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++ )
+        {
+            if (transform.GetChild(0).GetChild(1).GetChild(i).name != "Success(Clone)")
+            {
+                CustomerOrder.Delete(transform.parent.GetSiblingIndex(), transform.GetChild(0).GetChild(1).GetChild(i).gameObject);
+            }
+            
+        }
         OrderPanel.SetActive(false);
+        
+       
     }
 
 }

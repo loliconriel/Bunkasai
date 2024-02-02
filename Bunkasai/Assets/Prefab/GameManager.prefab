@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GamingScene: {fileID: 102900000, guid: 6a41e9073e565ea4186b61cea0f3363d, type: 3}
-  TotalTime: 30
-  GamePause: 0
+  TotalTime: 180
+  GamePlayCheck: 0

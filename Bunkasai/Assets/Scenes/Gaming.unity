@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 14283823}
   - component: {fileID: 14283822}
   - component: {fileID: 14283824}
+  - component: {fileID: 14283825}
   m_Layer: 5
   m_Name: CustomerArea
   m_TagString: Untagged
@@ -354,6 +355,30 @@ MonoBehaviour:
   Customer:
   - {fileID: 3704771038601097940, guid: 3b14af969cef23745a49426afcd4fb82, type: 3}
   SpawnTime: 3.66
+  Dish:
+  - {fileID: 339003673456320223, guid: 38128abd72f4706499736f45f8f9fac9, type: 3}
+  DishTopping:
+  - {fileID: 4719342497003348147, guid: ec9bf74decb8a8746bcd01d078a64690, type: 3}
+  - {fileID: 1664778662564297807, guid: d7105d957707041459232bb77181bb7b, type: 3}
+  - {fileID: 7668381459725475661, guid: 489774d9045700d44ab056a4511cf2c3, type: 3}
+  Drink:
+  - {fileID: 2752477901004263575, guid: 2195f4dc0075f8047ac829b38869244d, type: 3}
+  - {fileID: 7331446121336250709, guid: e0bff992f3c75d045b8141999c05d090, type: 3}
+  - {fileID: 4900253438665983209, guid: 5715ad0d9b9c53e44a58de6acab16f7b, type: 3}
+  DrinkTopping: []
+--- !u!114 &14283825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14283820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d9f1d082786aa47b49f67e2eb24ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Success: {fileID: 1720670316197817681, guid: 66063fd5b5e98dc4fbb621753716cdba, type: 3}
 --- !u!1 &33398681
 GameObject:
   m_ObjectHideFlags: 0
