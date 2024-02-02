@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e1ae43262bcc149948b411d3510dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamingScene: {fileID: 102900000, guid: 6a41e9073e565ea4186b61cea0f3363d, type: 3}
+  GamingScene: Gaming
   TotalTime: 180
   GamePlayCheck: 0

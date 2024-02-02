@@ -13,10 +13,7 @@ public class CustomerOrder : MonoBehaviour
     {
         instance = this;
     }
-    private void Update()
-    {
-        //Debug.Log(Orders.Count + " " + Customers.Count);
-    }
+    
     public static void Add(int CustomerNumber,GameObject Dish)
     {
         instance.Orders.Add(Dish);

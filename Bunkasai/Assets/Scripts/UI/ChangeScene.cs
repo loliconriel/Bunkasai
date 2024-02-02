@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
+
     [SerializeField]
-    private SceneAsset TargetScene;
+    private string TargetScene;
     [SerializeField]
     private Button ActionButton;
     private void Awake()
@@ -17,6 +18,6 @@ public class ChangeScene : MonoBehaviour
     }
     void Change()
     {
-        SceneManager.LoadScene(TargetScene.name);
+        SceneManager.LoadScene(TargetScene);
     }
 }

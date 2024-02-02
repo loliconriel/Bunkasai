@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7ece2866e9d8a4bb102961fd16daf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  TargetScene: Main
   ActionButton: {fileID: 754284281}
 --- !u!1 &902693297
 GameObject:
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   FinalContent: {fileID: 0}
   TargetList: {fileID: 484611870}
   FinalList: {fileID: 484611870}
-  CookTime: 10
+  CookTime: 3
 --- !u!224 &1155641451 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8317718473731060139, guid: 5ae72afdace30eb4297b7158982a94dd, type: 3}
@@ -3192,6 +3192,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251101086}
   m_CullTransparentMesh: 1
+--- !u!114 &1295582210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2117507947641758685, guid: f14a82d0e3e787f479d8eea8e0f484a6, type: 3}
+  m_PrefabInstance: {fileID: 2117507946982751972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e1ae43262bcc149948b411d3510dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1326774885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +3769,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2117507947641758685, guid: f14a82d0e3e787f479d8eea8e0f484a6, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1371572059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4075,6 +4098,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1295582210}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5108,7 +5143,7 @@ MonoBehaviour:
   FinalContent: {fileID: 0}
   TargetList: {fileID: 0}
   FinalList: {fileID: 484611870}
-  CookTime: 5
+  CookTime: 4
 --- !u!1 &1743698552
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class Drink : Ingredient
         Clock = transform.GetChild(0).GetComponent<Image>();
         Clock.color = Color.green;
         Clock.fillAmount = 0f;
+        CookTime *= GameManager.GetDishCookTime();
         NowTime = 0f;
         GetComponent<Button>().onClick.AddListener(action);
     }
@@ -34,11 +35,15 @@ public class Drink : Ingredient
     }
     private void Update()
     {
-        if(status == Status.Make)
+        if (GameManager.StateGame())
         {
-            NowTime += Time.deltaTime;
-            Clock.fillAmount = NowTime/CookTime;
+            if (status == Status.Make)
+            {
+                NowTime += Time.deltaTime;
+                Clock.fillAmount = NowTime / CookTime;
+            }
         }
+        
     }
     protected override void action()
     {

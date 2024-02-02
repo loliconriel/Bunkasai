@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ManagerTrigger : MonoBehaviour
 {
     [SerializeField]
-    SceneAsset PlayScene;
+    string PlayScene;
     private void Start()
     {
-        if(SceneManager.GetActiveScene().name == PlayScene.name)
+        if(SceneManager.GetActiveScene().name == PlayScene)
         {
             GameManager.Init();
             GameManager.StartGame();

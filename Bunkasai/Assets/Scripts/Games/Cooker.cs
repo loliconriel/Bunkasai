@@ -22,18 +22,22 @@ public class Cooker : MonoBehaviour
 
     private void Update()
     {
-        if (CookCheck)
+        if (GameManager.StateGame())
         {
-            Cooking();
-            Dishdetail();
+            if (CookCheck)
+            {
+                Cooking();
+                Dishdetail();
+            }
         }
+        
         
     }
     public void SetDish(float CookTime, float MuddyTime,GameObject Content,GameObject TargetList)
     {
         this.NowTime = 0f;
-        this.CookTime = CookTime;
-        this.MuddyTime = MuddyTime;
+        this.CookTime = CookTime*GameManager.GetDishCookTime();
+        this.MuddyTime = MuddyTime*GameManager.GetDishMuddyTime();
         this.CookCheck = true;
         this.Content = Content;
         this.TargetList = TargetList;

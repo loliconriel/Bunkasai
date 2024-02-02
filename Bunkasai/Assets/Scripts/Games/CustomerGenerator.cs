@@ -33,7 +33,7 @@ public class CustomerGenerator : MonoBehaviour
         Timer += Time.deltaTime;
         if (GameManager.StateGame())
         {
-            if (Timer-(SpawnTime * Random.Range(0.9f, 1.1f)) > 0)
+            if (Timer-(SpawnTime* GameManager.GetCustomerVisitSpeed() * Random.Range(0.9f, 1.1f)) > 0)
             {
                 int counter = 0;
                 Timer = 0f;
@@ -56,7 +56,7 @@ public class CustomerGenerator : MonoBehaviour
                     a.transform.SetParent(StayList.transform.GetChild(Spawnindex));
                     Customer test = a.AddComponent<Customer>();
 
-                    Vector3 Speed =  new Vector3((StayList.transform.GetChild(1).position.x - StayList.transform.GetChild(0).position.x) /1.5f,0f,0f);
+                    Vector3 Speed =  new Vector3((StayList.transform.GetChild(1).position.x - StayList.transform.GetChild(0).position.x) /1.5f,0f,0f)*GameManager.GetCustomerSpeed();
                     Order(a.transform.GetChild(0).GetChild(1).gameObject);
                     if (Spawnnumber == 0)
                     {

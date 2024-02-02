@@ -28,6 +28,7 @@ public class Customer : MonoBehaviour
         this.StayPosition = StayPosition;
         this.EndPosition = EndPosition;
         CustomerStatus = Status.Enter;
+        LeaveTime *= GameManager.GetCustomerPassionate();
         WaitingTime = 0f;
         OrderPanel = transform.GetChild(0).gameObject;
     
@@ -36,47 +37,50 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (CustomerStatus == Status.Enter)
+        if (GameManager.StateGame())
         {
-            if (Mathf.Abs(transform.position.x - StayPosition.x) < 0.1f)
+            if (CustomerStatus == Status.Enter)
             {
-                CustomerStatus = Status.Waitng;
-                Order();
-            }
-            else transform.position += Speed * Time.deltaTime;
-        }
-        else if(CustomerStatus == Status.Waitng)
-        {
-            WaitingTime += Time.deltaTime;
-            OrderPanel.transform.GetChild(0).GetComponent<Slider>().value = 1 - (WaitingTime / LeaveTime);
-            if (WaitingTime > LeaveTime)
-            {
-                CustomerStatus = Status.Leave;
-                Leave();
-            }
-            for(int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++)
-            {
-                if (transform.GetChild(0).GetChild(1).GetChild(i).name != "Success(Clone)")
+                if (Mathf.Abs(transform.position.x - StayPosition.x) < 0.1f)
                 {
-                    break;
+                    CustomerStatus = Status.Waitng;
+                    Order();
                 }
-                if(i == transform.GetChild(0).GetChild(1).childCount - 1)
+                else transform.position += Speed * Time.deltaTime;
+            }
+            else if (CustomerStatus == Status.Waitng)
+            {
+                WaitingTime += Time.deltaTime;
+                OrderPanel.transform.GetChild(0).GetComponent<Slider>().value = 1 - (WaitingTime / LeaveTime);
+                if (WaitingTime > LeaveTime)
                 {
                     CustomerStatus = Status.Leave;
                     Leave();
                 }
+                for (int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++)
+                {
+                    if (transform.GetChild(0).GetChild(1).GetChild(i).name != "Success(Clone)")
+                    {
+                        break;
+                    }
+                    if (i == transform.GetChild(0).GetChild(1).childCount - 1)
+                    {
+                        CustomerStatus = Status.Leave;
+                        Leave();
+                    }
+                }
             }
-        }
-        else
-        {
-            if (Mathf.Abs(transform.position.x - EndPosition.x) < 0.1f)
+            else
             {
-                Destroy(gameObject);
-            }
-            else transform.position += Speed * Time.deltaTime;
+                if (Mathf.Abs(transform.position.x - EndPosition.x) < 0.1f)
+                {
+                    Destroy(gameObject);
+                }
+                else transform.position += Speed * Time.deltaTime;
 
+            }
         }
+        
         
         
     }

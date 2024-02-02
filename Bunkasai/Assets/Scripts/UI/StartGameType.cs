@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
+#if UNITY_EDITOR
 
 [CustomEditor(typeof(MenuController))]
 public class StartGameType : Editor
@@ -46,3 +49,4 @@ public class StartGameType : Editor
         obj.ApplyModifiedProperties();
     }
 }
+#endif
