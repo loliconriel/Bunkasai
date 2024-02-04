@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             RemainTime -= Time.deltaTime;
             if (RemainTime <= 0f)
             {
-                PauseGame();
+                GamePlayEnd = true;
             }
         }
         
@@ -94,10 +94,15 @@ public class GameManager : MonoBehaviour
     public static void Init()
     {
         instance.RemainTime = instance.TotalTime;
+        instance.GamePlayEnd = false;
     }
     public static float GetRemainTime()
     {
         return instance.RemainTime/instance.TotalTime;
+    }
+    public static bool RoundEnd()
+    {
+        return instance.GamePlayEnd;
     }
     public static bool StateGame()
     {

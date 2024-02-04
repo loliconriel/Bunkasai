@@ -31,7 +31,7 @@ public class CustomerGenerator : MonoBehaviour
     void Update()
     {
         Timer += Time.deltaTime;
-        if (GameManager.StateGame())
+        if (GameManager.StateGame()&&GameManager.RoundEnd()!=true )
         {
             if (Timer-(SpawnTime* GameManager.GetCustomerVisitSpeed() * Random.Range(0.9f, 1.1f)) > 0)
             {
