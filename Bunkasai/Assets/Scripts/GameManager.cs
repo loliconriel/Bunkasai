@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     private float RemainTime;
     private bool GamePlayCheck;
     private bool GamePlayEnd;
-    
+
+    private int NowMoney = 0;
     private int CurrentRound = 0;
     private int TotalRound = 1;
     private int TargetMoney = 1000;
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
     }
     private static void GameSet(int TotalRound = 1,int TargetMoney = 1000,float CustomerPassionate = 1.5f,float CustomerVisitSpeed = 1f, float PayAmount = 1.5f,float CustomerSpeed = 1.2f,float DishCookTime = 0.5f,float DishMuddyTime = 1.5f)
     {
+        instance.NowMoney = 0;
         instance.CurrentRound = 0; 
         instance.TotalRound = TotalRound;
         instance.TargetMoney = TargetMoney;
@@ -115,6 +117,18 @@ public class GameManager : MonoBehaviour
     public static void StartGame()
     {
         instance.GamePlayCheck = true;
+    }
+    public static void AddMoney(int money)
+    {
+        instance.NowMoney += money;
+    }
+    public static void MinusMoney(int money)
+    {
+        instance.NowMoney -= money;
+    }
+    public static int GetMoeny()
+    {
+        return instance.NowMoney;
     }
     public static float GetCustomerPassionate()
     {

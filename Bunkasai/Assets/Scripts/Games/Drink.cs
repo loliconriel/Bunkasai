@@ -11,27 +11,29 @@ public class Drink : Ingredient
         Idle
     }
     [SerializeField]
-    private float CookTime = 5f;
+    private float CookTime;
+    private float ReadyTime;
     private float NowTime;
     private Image Clock;
     private Status status;
-    private void Awake()
+    void Awake()
     {
-
         status = Status.Idle;
         Clock = transform.GetChild(0).GetComponent<Image>();
         Clock.color = Color.green;
         Clock.fillAmount = 0f;
-        CookTime *= GameManager.GetDishCookTime();
+
         NowTime = 0f;
         GetComponent<Button>().onClick.AddListener(action);
     }
+
     void Init()
     {
         status = Status.Idle;
         Clock.color = Color.green;
         Clock.fillAmount = 0f;
         NowTime = 0f;
+        ReadyTime = CookTime * GameManager.GetDishCookTime();
     }
     private void Update()
     {
@@ -40,7 +42,7 @@ public class Drink : Ingredient
             if (status == Status.Make)
             {
                 NowTime += Time.deltaTime;
-                Clock.fillAmount = NowTime / CookTime;
+                Clock.fillAmount = NowTime / ReadyTime;
             }
         }
         
@@ -55,7 +57,7 @@ public class Drink : Ingredient
         }
         else
         {
-            if (NowTime >= CookTime)
+            if (NowTime >= ReadyTime)
             {
                 foreach (Transform item in FinalList.transform)
                 {

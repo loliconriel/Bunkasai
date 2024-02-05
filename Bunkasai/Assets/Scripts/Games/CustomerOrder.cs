@@ -9,15 +9,16 @@ public class CustomerOrder : MonoBehaviour
     public static CustomerOrder instance;
     private List<GameObject> Orders = new List<GameObject>();
     private List<int> Customers = new List<int>();
+    private List<int> DishMoney = new List<int>();
     private void Awake()
     {
         instance = this;
     }
     
-    public static void Add(int CustomerNumber,GameObject Dish)
+    public static void Add(int CustomerNumber,int DishMoney,GameObject Dish)
     {
         instance.Orders.Add(Dish);
-
+        instance.DishMoney.Add(DishMoney);
         instance.Customers.Add(CustomerNumber);
     }
     public static void Delete(int CustomerNumber,GameObject Dish)
@@ -29,6 +30,7 @@ public class CustomerOrder : MonoBehaviour
                 if (instance.Orders[i].name == Dish.name)
                 {
                     instance.Customers.RemoveAt(i);
+                    instance.DishMoney.RemoveAt(i);
                     instance.Orders.RemoveAt(i);
                     break;
                 }
@@ -68,6 +70,7 @@ public class CustomerOrder : MonoBehaviour
                                 break;
                             }
                         }
+                        GameManager.AddMoney(instance.DishMoney[i]);
                         Delete(instance.Customers[i], instance.Orders[i]);
                         return true;
                     }

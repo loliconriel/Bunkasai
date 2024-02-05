@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro.Examples;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomerGenerator : MonoBehaviour
@@ -22,6 +24,8 @@ public class CustomerGenerator : MonoBehaviour
     private List<GameObject> Drink;
     [SerializeField]
     private List<GameObject> DrinkTopping;
+    [SerializeField]
+    private List<int> ToppingMoney;
     
     private float Timer;
     private void Start()
@@ -52,55 +56,76 @@ public class CustomerGenerator : MonoBehaviour
                     do Spawnindex = Random.Range(0, StayList.transform.childCount); while (StayList.transform.GetChild(Spawnindex).childCount != 0);
 
                     Transform SpawnPlace = SpawnList.transform.GetChild(Spawnnumber).transform;
-                    GameObject a = Instantiate(Customer[Random.Range(0, Customer.Length)], SpawnPlace);
-                    a.transform.SetParent(StayList.transform.GetChild(Spawnindex));
-                    Customer test = a.AddComponent<Customer>();
+                    GameObject SpawnCustomer = Instantiate(Customer[Random.Range(0, Customer.Length)], SpawnPlace);
+                    SpawnCustomer.transform.SetParent(StayList.transform.GetChild(Spawnindex));
+                    Customer CustomerInit = SpawnCustomer.AddComponent<Customer>();
 
+                     
                     Vector3 Speed =  new Vector3((StayList.transform.GetChild(1).position.x - StayList.transform.GetChild(0).position.x) /1.5f,0f,0f)*GameManager.GetCustomerSpeed();
-                    Order(a.transform.GetChild(0).GetChild(1).gameObject);
+                    List<int> Money = new List<int>();
+                    Money = GenerateOrder(SpawnCustomer.transform.GetChild(0).GetChild(1).gameObject);
                     if (Spawnnumber == 0)
                     {
-                        test.Init(Speed, a.transform.parent.position, SpawnList.transform.GetChild(1).position);
+                        CustomerInit.Init(Speed, SpawnCustomer.transform.parent.position, SpawnList.transform.GetChild(1).position,Money);
                     }
-                    else test.Init(-Speed, a.transform.parent.position, SpawnList.transform.GetChild(0).position);
+                    else CustomerInit.Init(-Speed, SpawnCustomer.transform.parent.position, SpawnList.transform.GetChild(0).position,Money);
                 }
                 
             }
         }
         
-    }
-    private void Order(GameObject OrderList)
+    } 
+
+    private List<int> GenerateOrder(GameObject OrderList)
     {
 
         int FirstDish = Random.Range(0, 2);
+        List<int> Money = new List<int>();
+        int FirstDishMoney;
         GameObject Dish1;
         if (FirstDish == 0)
         {
             Dish1 = Instantiate(Dish[Random.Range(0, Dish.Count)],OrderList.transform);
+            FirstDishMoney = 50;
             foreach (GameObject Topping in DishTopping)
             {
-                if (Random.Range(0, 2) == 1) Instantiate(Topping,Dish1.transform);
+                if (Random.Range(0, 2) == 1) {
+                    FirstDishMoney += ToppingMoney[DishTopping.IndexOf(Topping)];
+                    Instantiate(Topping, Dish1.transform);
+                }
             }
+            
         }
         else
         {
-            Dish1 = Instantiate(Drink[Random.Range(0, Drink.Count)], OrderList.transform);
+            int DrinkType = Random.Range(0, Drink.Count);
+            Dish1 = Instantiate(Drink[DrinkType], OrderList.transform);
+            FirstDishMoney = 15 + (DrinkType + 1) * 5;
         }
+        Money.Add(FirstDishMoney);
         if (Random.Range(0, 2) == 1)
         {
             GameObject Dish2;
+            int SecondDishMoney;
             if(FirstDish == 0)
             {
-                Dish2 = Instantiate(Drink[Random.Range(0, Drink.Count)], OrderList.transform);
+                int DrinkType = Random.Range(0, Drink.Count);
+                Dish2 = Instantiate(Drink[DrinkType], OrderList.transform);
+                SecondDishMoney = 15 + (DrinkType + 1) * 5;
             }
             else
             {
                 Dish2 = Instantiate(Dish[Random.Range(0, Dish.Count)], OrderList.transform);
+                SecondDishMoney = 50;
                 foreach (GameObject Topping in DishTopping)
                 {
-                    if (Random.Range(0, 2) == 1) Instantiate(Topping, Dish2.transform);
+                    if (Random.Range(0, 2) == 1) {
+                        SecondDishMoney += ToppingMoney[DishTopping.IndexOf(Topping)];
+                        Instantiate(Topping, Dish2.transform);
+                    } 
                 }
             }
+            Money.Add(SecondDishMoney);
             Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
             Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.4f);
             Dish2.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.5f);
@@ -112,7 +137,7 @@ public class CustomerGenerator : MonoBehaviour
             Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
             Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.9f);
         }
-        
+        return Money;
     }
     
 }

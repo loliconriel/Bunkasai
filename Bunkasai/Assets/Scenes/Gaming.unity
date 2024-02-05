@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7334222}
   - component: {fileID: 7334224}
   - component: {fileID: 7334223}
+  - component: {fileID: 7334225}
   m_Layer: 5
   m_Name: MoneyAmount
   m_TagString: Untagged
@@ -157,7 +158,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.95, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -258,6 +259,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7334221}
   m_CullTransparentMesh: 1
+--- !u!114 &7334225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd9d91ed06483443a2025c17a02cfb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &14283820
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +367,7 @@ MonoBehaviour:
   StayList: {fileID: 1056919163}
   Customer:
   - {fileID: 3704771038601097940, guid: 3b14af969cef23745a49426afcd4fb82, type: 3}
-  SpawnTime: 3.66
+  SpawnTime: 4
   Dish:
   - {fileID: 339003673456320223, guid: 38128abd72f4706499736f45f8f9fac9, type: 3}
   DishTopping:
@@ -366,6 +379,7 @@ MonoBehaviour:
   - {fileID: 7331446121336250709, guid: e0bff992f3c75d045b8141999c05d090, type: 3}
   - {fileID: 4900253438665983209, guid: 5715ad0d9b9c53e44a58de6acab16f7b, type: 3}
   DrinkTopping: []
+  ToppingMoney: 0f0000001400000028000000
 --- !u!114 &14283825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,7 +2108,7 @@ RectTransform:
   - {fileID: 2132872545}
   - {fileID: 93639440}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2702,7 +2716,6 @@ GameObject:
   - component: {fileID: 1142546217}
   - component: {fileID: 1142546221}
   - component: {fileID: 1142546223}
-  - component: {fileID: 1142546222}
   m_Layer: 5
   m_Name: Bucket1
   m_TagString: Untagged
@@ -2813,18 +2826,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1142546222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142546215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fdd578b027a4742a641986ad26e604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1142546223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2839,7 +2840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Content: {fileID: 7331446121336250709, guid: e0bff992f3c75d045b8141999c05d090, type: 3}
   FinalContent: {fileID: 0}
-  TargetList: {fileID: 484611870}
+  TargetList: {fileID: 0}
   FinalList: {fileID: 484611870}
   CookTime: 3
 --- !u!224 &1155641451 stripped
@@ -5345,7 +5346,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764777815
 GameObject:
@@ -6570,7 +6571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2117507947641758686, guid: f14a82d0e3e787f479d8eea8e0f484a6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2117507947641758686, guid: f14a82d0e3e787f479d8eea8e0f484a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6720,7 +6721,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5915836481742857988, guid: 6956420cfcc3c0048930c4a01bb2830c, type: 3}
       propertyPath: m_LocalPosition.x

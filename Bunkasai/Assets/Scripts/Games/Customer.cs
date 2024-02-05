@@ -21,8 +21,9 @@ public class Customer : MonoBehaviour
     float LeaveTime = 10f;
     float WaitingTime;
 
+    List<int> DishMoney = new List<int>();
     GameObject OrderPanel;
-    public void Init(Vector3 Speed,Vector3 StayPosition,Vector3 EndPosition)
+    public void Init(Vector3 Speed,Vector3 StayPosition,Vector3 EndPosition,List<int> Money)
     {
         this.Speed = Speed;
         this.StayPosition = StayPosition;
@@ -31,6 +32,10 @@ public class Customer : MonoBehaviour
         LeaveTime *= GameManager.GetCustomerPassionate();
         WaitingTime = 0f;
         OrderPanel = transform.GetChild(0).gameObject;
+        foreach (int i in Money)
+        {
+            DishMoney.Add(i);
+        }
     
     }
 
@@ -77,18 +82,18 @@ public class Customer : MonoBehaviour
                     Destroy(gameObject);
                 }
                 else transform.position += Speed * Time.deltaTime;
-
             }
         }
         
         
         
     }
+
     private void Order()
     {
         OrderPanel.SetActive(true);
         for (int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++){
-            CustomerOrder.Add(transform.parent.GetSiblingIndex(), transform.GetChild(0).GetChild(1).GetChild(i).gameObject);
+            CustomerOrder.Add(transform.parent.GetSiblingIndex(), DishMoney[i], transform.GetChild(0).GetChild(1).GetChild(i).gameObject);
         }
         
     }
