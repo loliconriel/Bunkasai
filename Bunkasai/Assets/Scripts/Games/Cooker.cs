@@ -9,6 +9,9 @@ public class Cooker : MonoBehaviour
     private float CookTime;
     private float MuddyTime;
     private bool CookCheck = false;
+    [SerializeField]
+    Sprite[] sprite;
+
     private GameObject Content;
     private GameObject TargetList;
     private Image Clock;
@@ -43,7 +46,7 @@ public class Cooker : MonoBehaviour
         this.TargetList = TargetList;
         Clock.color = Color.green;
         Clock.fillAmount = 0f;
-        
+        GetComponent<Image>().sprite = sprite[1];
     }
     private void click()
     {
@@ -59,6 +62,7 @@ public class Cooker : MonoBehaviour
                         Destroy(transform.GetChild(1).gameObject);
                         Clock.fillAmount = 0f;
                         CookCheck = false;
+                        GetComponent<Image>().sprite = sprite[0];
                         Debug.Log("Sent Success");
                         break;
                     }
@@ -81,6 +85,7 @@ public class Cooker : MonoBehaviour
             if (NowTime > MuddyTime)
             {
                 Destroy(transform.GetChild(1).gameObject);
+                GetComponent<Image>().sprite = sprite[0];
                 Debug.Log("Sent to trash");
             }
         }

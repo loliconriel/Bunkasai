@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
         RemainTime = TotalTime;
-        GameSet();
+
         //if (SceneManager.GetActiveScene().name == GamingScene.name) GamePlayCheck = true;
         //else GamePlayCheck = false;
         GamePlayCheck = false;
@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
     }
     public static void GameSetting(int Difficulty)
     {
-
         switch (Difficulty)
         {
             case 0:
