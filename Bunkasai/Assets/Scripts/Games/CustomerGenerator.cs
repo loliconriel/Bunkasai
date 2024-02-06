@@ -34,9 +34,10 @@ public class CustomerGenerator : MonoBehaviour
     }
     void Update()
     {
-        Timer += Time.deltaTime;
+        
         if (GameManager.StateGame()&&GameManager.RoundEnd()!=true )
         {
+            Timer += Time.deltaTime;
             if (Timer-(SpawnTime* GameManager.GetCustomerVisitSpeed() * Random.Range(0.9f, 1.1f)) > 0)
             {
                 int counter = 0;
@@ -59,7 +60,7 @@ public class CustomerGenerator : MonoBehaviour
                     GameObject SpawnCustomer = Instantiate(Customer[Random.Range(0, Customer.Length)], SpawnPlace);
                     SpawnCustomer.transform.SetParent(StayList.transform.GetChild(Spawnindex));
                     Customer CustomerInit = SpawnCustomer.AddComponent<Customer>();
-
+                    GameManager.AddCustomer();
                      
                     Vector3 Speed =  new Vector3((StayList.transform.GetChild(1).position.x - StayList.transform.GetChild(0).position.x) /1.5f,0f,0f)*GameManager.GetCustomerSpeed();
                     List<int> Money = new List<int>();
@@ -73,7 +74,10 @@ public class CustomerGenerator : MonoBehaviour
                 
             }
         }
-        
+        else
+        {
+            Timer = 0f;
+        }
     } 
 
     private List<int> GenerateOrder(GameObject OrderList)
@@ -101,6 +105,15 @@ public class CustomerGenerator : MonoBehaviour
             int DrinkType = Random.Range(0, Drink.Count);
             Dish1 = Instantiate(Drink[DrinkType], OrderList.transform);
             FirstDishMoney = 15 + (DrinkType + 1) * 5;
+            foreach (GameObject Topping in DrinkTopping)
+            {
+                if (Random.Range(0, 2) == 1)
+                {
+                    FirstDishMoney += (DrinkTopping.IndexOf(Topping) + 1) * 5;
+                    Instantiate(Topping, Dish1.transform);
+                }
+            }
+            
         }
         Money.Add(FirstDishMoney);
         if (Random.Range(0, 2) == 1)
@@ -112,6 +125,14 @@ public class CustomerGenerator : MonoBehaviour
                 int DrinkType = Random.Range(0, Drink.Count);
                 Dish2 = Instantiate(Drink[DrinkType], OrderList.transform);
                 SecondDishMoney = 15 + (DrinkType + 1) * 5;
+                foreach (GameObject Topping in DrinkTopping)
+                {
+                    if (Random.Range(0, 2) == 1)
+                    {
+                        SecondDishMoney += ((DrinkTopping.IndexOf(Topping) + 1) * 5);
+                        Instantiate(Topping, Dish2.transform);
+                    }
+                }
             }
             else
             {

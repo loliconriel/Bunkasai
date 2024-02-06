@@ -34,7 +34,7 @@ public class Customer : MonoBehaviour
         OrderPanel = transform.GetChild(0).gameObject;
         foreach (int i in Money)
         {
-            DishMoney.Add(i);
+            DishMoney.Add((int)(i *GameManager.GetPayAmount()));
         }
     
     }
@@ -79,6 +79,7 @@ public class Customer : MonoBehaviour
             {
                 if (Mathf.Abs(transform.position.x - EndPosition.x) < 0.1f)
                 {
+                    GameManager.MinusCustomer();
                     Destroy(gameObject);
                 }
                 else transform.position += Speed * Time.deltaTime;

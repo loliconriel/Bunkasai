@@ -16,6 +16,7 @@ public class DifficultyChoose : MonoBehaviour
         {
             Change(GetComponent<TMP_Dropdown>().value);
         });
+        Change(GetComponent<TMP_Dropdown>().value);
     }
 
     void Change(int Difficulty)

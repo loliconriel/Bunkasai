@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,16 +15,20 @@ public class GameManager : MonoBehaviour
     private bool GamePlayCheck;
     private bool GamePlayEnd;
 
-    private int NowMoney = 0;
+    private int NowMoney = 100;
     private int CurrentRound = 0;
     private int TotalRound = 1;
     private int TargetMoney = 1000;
+    private int[] UpgradeList = new int[8] {1,1,1,1,1,1,-1,-1};
     private float CustomerVisitSpeed = 1f;
     private float CustomerPassionate = 1f;
     private float PayAmount = 1f;
     private float CustomerSpeed = 1f;
     private float DishCookTime = 1f;
     private float DishMuddyTime = 1f;
+
+    private int NowCustomer = 0;
+    private GameObject ShopPanel;
     private void Awake()
     {
         if(instance == null)
@@ -51,21 +56,33 @@ public class GameManager : MonoBehaviour
             {
                 GamePlayEnd = true;
             }
+            if(NowCustomer == 0 && GamePlayEnd)
+            {
+                GamePlayCheck = false;
+                if(instance.CurrentRound+1 < instance.TotalRound)
+                {
+                    ShopPanel.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log("Game End!");
+                }
+                
+            }
         }
-        
     }
     public static void GameSetting(int Difficulty)
     {
         switch (Difficulty)
         {
             case 0:
-                GameSet(1, 1000, 1.5f, 1f, 1.5f, 1.2f, 0.5f, 1.5f);
+                GameSet(new int[8] { 1, 2, 2, 2, 2, 3, -1, -1 }, 1, 1000, 1.5f, 1f, 1.5f, 1.2f, 0.5f, 1.5f);
                 break;
             case 1:
-                GameSet(1, 1000, 1.5f, 1f, 1.5f, 1.2f, 0.5f, 1.5f);
+                GameSet(new int[8] { 1, 2, 2, 2, 2, 3, -1, -1 },1, 1000, 1.5f, 1f, 1.5f, 1.2f, 0.5f, 1.5f);
                 break;
             case 2:
-                GameSet(3, 4000, 1f, 1f, 1f, 1f, 1f, 1f);
+                GameSet(new int[8] { 1, 1, 1, 1, 1, 2, -1, -1 },3, 4000, 1f, 1f, 1f, 1f, 1f, 1f);
                 break;
             case 3:
                 GameSet(6, 10000, 0.8f, 1.3f, 0.8f, 0.8f, 1.2f, 0.8f);
@@ -75,7 +92,23 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    private static void GameSet(int TotalRound = 1,int TargetMoney = 1000,float CustomerPassionate = 1.5f,float CustomerVisitSpeed = 1f, float PayAmount = 1.5f,float CustomerSpeed = 1.2f,float DishCookTime = 0.5f,float DishMuddyTime = 1.5f)
+    private static void GameSet(int[] UpgradeList,int TotalRound = 1, int TargetMoney = 1000, float CustomerPassionate = 1.5f, float CustomerVisitSpeed = 1f, float PayAmount = 1.5f, float CustomerSpeed = 1.2f, float DishCookTime = 0.5f, float DishMuddyTime = 1.5f)
+    {
+        instance.NowMoney = 0;
+        instance.CurrentRound = 0;
+        instance.NowCustomer = 0;
+        instance.TotalRound = TotalRound;
+        instance.TargetMoney = TargetMoney;
+        instance.CustomerPassionate = CustomerPassionate;
+        instance.CustomerVisitSpeed = CustomerVisitSpeed;
+        instance.PayAmount = PayAmount;
+        instance.CustomerSpeed = CustomerSpeed;
+        instance.DishCookTime = DishCookTime;
+        instance.DishMuddyTime = DishMuddyTime;
+
+        instance.UpgradeList = (int[])UpgradeList.Clone();
+    }
+    private static void GameSet(int TotalRound = 1, int TargetMoney = 1000, float CustomerPassionate = 1.5f, float CustomerVisitSpeed = 1f, float PayAmount = 1.5f, float CustomerSpeed = 1.2f, float DishCookTime = 0.5f, float DishMuddyTime = 1.5f)
     {
         instance.NowMoney = 0;
         instance.CurrentRound = 0; 
@@ -87,6 +120,12 @@ public class GameManager : MonoBehaviour
         instance.CustomerSpeed = CustomerSpeed;
         instance.DishCookTime = DishCookTime;
         instance.DishMuddyTime = DishMuddyTime;
+        for(int i = 0; i < instance.UpgradeList.Length; i++)
+        {
+            instance.UpgradeList[i] = 0;
+        }
+        instance.UpgradeList[6] = -1;
+        instance.UpgradeList[7] = -1;
     }
     public static void GameInit(float TotalTime)
     {
@@ -125,9 +164,33 @@ public class GameManager : MonoBehaviour
     {
         instance.NowMoney -= money;
     }
+    public static void AddCurrentRound()
+    {
+        instance.CurrentRound++;
+    }
+    public static int GetCurrentRound()
+    {
+        return instance.CurrentRound;
+    }
+    public static void AddCustomer()
+    {
+        instance.NowCustomer++;
+    }
+    public static void MinusCustomer()
+    {
+        instance.NowCustomer--;
+    }
+    public static int GetCustomer()
+    {
+        return instance.NowCustomer;
+    }
     public static int GetMoeny()
     {
         return instance.NowMoney;
+    }
+    public static int GetUpgrade(int index)
+    {
+        return instance.UpgradeList[index];
     }
     public static float GetCustomerPassionate()
     {
@@ -152,5 +215,9 @@ public class GameManager : MonoBehaviour
     public static float GetDishMuddyTime()
     {
         return instance.DishMuddyTime;
+    }
+    public static void SetShopePanel(GameObject Panel)
+    {
+        instance.ShopPanel = Panel;
     }
 }
