@@ -25,6 +25,10 @@ public class Drink : Ingredient
 
         NowTime = 0f;
         GetComponent<Button>().onClick.AddListener(action);
+        if(FinalList == null)
+        {
+            FinalList = GameObject.Find("DrinkArea");
+        }
     }
 
     void Init()

@@ -10,11 +10,12 @@ public class Topping : MonoBehaviour
 {
     [SerializeField]
     private GameObject Content;
-    [SerializeField]
+
     private GameObject TargetList;
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(action);
+        
     }
     private void action()
     {
@@ -63,6 +64,10 @@ public class Topping : MonoBehaviour
 
             
         }
+    }
+    public void SetTargetList(Transform Target)
+    {
+        this.TargetList = Target.gameObject;
     }
 
 }

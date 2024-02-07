@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
     }
     private static void GameSet(int[] UpgradeList,int TotalRound = 1, int TargetMoney = 1000, float CustomerPassionate = 1.5f, float CustomerVisitSpeed = 1f, float PayAmount = 1.5f, float CustomerSpeed = 1.2f, float DishCookTime = 0.5f, float DishMuddyTime = 1.5f)
     {
-        instance.NowMoney = 0;
+        instance.NowMoney = 100;
         instance.CurrentRound = 0;
         instance.NowCustomer = 0;
         instance.TotalRound = TotalRound;
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
     }
     private static void GameSet(int TotalRound = 1, int TargetMoney = 1000, float CustomerPassionate = 1.5f, float CustomerVisitSpeed = 1f, float PayAmount = 1.5f, float CustomerSpeed = 1.2f, float DishCookTime = 0.5f, float DishMuddyTime = 1.5f)
     {
-        instance.NowMoney = 0;
+        instance.NowMoney = 100;
         instance.CurrentRound = 0; 
         instance.TotalRound = TotalRound;
         instance.TargetMoney = TargetMoney;
@@ -187,6 +187,10 @@ public class GameManager : MonoBehaviour
     public static int GetMoeny()
     {
         return instance.NowMoney;
+    }
+    public static void Upgrade(int index)
+    {
+        instance.UpgradeList[index]++;
     }
     public static int GetUpgrade(int index)
     {

@@ -45,7 +45,7 @@ public class StoreUpgrade : MonoBehaviour
             if (GameManager.GetMoeny() >= UpgradeAmount[NowLevel])
             {
                 GameManager.MinusMoney(UpgradeAmount[NowLevel]);
-                
+                GameManager.Upgrade(transform.GetSiblingIndex());
                 NowLevel++;
                 GetComponentInChildren<Image>().sprite = image[NowLevel];
                 if (NowLevel >= image.Length-1) text.text = "Lv.MAX";
