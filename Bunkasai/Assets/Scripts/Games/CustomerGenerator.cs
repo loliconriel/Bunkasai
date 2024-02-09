@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro.Examples;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomerGenerator : MonoBehaviour
@@ -20,6 +19,11 @@ public class CustomerGenerator : MonoBehaviour
     private List<GameObject> Dish;
     [SerializeField]
     private List<GameObject> DishTopping;
+    [SerializeField]
+    [Tooltip("False is Topping True is Sauce ")]
+    private bool[] ToppingOrSauce;
+    [SerializeField]
+    private int[] ToppingOrSauceIndex;
     [SerializeField]
     private List<GameObject> Drink;
     [SerializeField]
@@ -91,29 +95,43 @@ public class CustomerGenerator : MonoBehaviour
         {
             Dish1 = Instantiate(Dish[Random.Range(0, Dish.Count)],OrderList.transform);
             FirstDishMoney = 50;
-            foreach (GameObject Topping in DishTopping)
-            {
-                if (Random.Range(0, 2) == 1) {
-                    FirstDishMoney += ToppingMoney[DishTopping.IndexOf(Topping)];
-                    Instantiate(Topping, Dish1.transform);
-                }
-            }
-            
-        }
-        else
-        {
-            int DrinkType = Random.Range(0, Drink.Count);
-            Dish1 = Instantiate(Drink[DrinkType], OrderList.transform);
-            FirstDishMoney = 15 + (DrinkType + 1) * 5;
-            foreach (GameObject Topping in DrinkTopping)
+            for (int i = 0; i < DishTopping.Count; i++)
             {
                 if (Random.Range(0, 2) == 1)
                 {
-                    FirstDishMoney += (DrinkTopping.IndexOf(Topping) + 1) * 5;
-                    Instantiate(Topping, Dish1.transform);
+                    if (ToppingOrSauce[i])
+                    {
+                        if (ToppingOrSauceIndex[i] < GameManager.GetUpgrade(5))
+                        {
+                            FirstDishMoney += ToppingMoney[i];
+                            Instantiate(DishTopping[i], Dish1.transform);
+                        }
+                    }
+                    else
+                    {
+                        if (ToppingOrSauceIndex[i] < GameManager.GetUpgrade(3))
+                        {
+                            FirstDishMoney += ToppingMoney[i];
+                            Instantiate(DishTopping[i], Dish1.transform);
+                        }
+                    }
                 }
             }
-            
+        }
+        else
+        {
+            int DrinkType = Random.Range(0, GameManager.GetUpgrade(1) + 1);
+            Dish1 = Instantiate(Drink[DrinkType], OrderList.transform);
+            FirstDishMoney = 15 + (DrinkType + 1) * 5;
+            for (int i = 0; i < GameManager.GetUpgrade(4); i++)
+            {
+                if (Random.Range(0, 2) == 1)
+                {
+                    FirstDishMoney += (i + 1) * 5;
+                    Instantiate(DrinkTopping[i], Dish1.transform);
+                }
+            }
+
         }
         Money.Add(FirstDishMoney);
         if (Random.Range(0, 2) == 1)
@@ -122,15 +140,15 @@ public class CustomerGenerator : MonoBehaviour
             int SecondDishMoney;
             if(FirstDish == 0)
             {
-                int DrinkType = Random.Range(0, Drink.Count);
+                int DrinkType = Random.Range(0, GameManager.GetUpgrade(1) + 1);
                 Dish2 = Instantiate(Drink[DrinkType], OrderList.transform);
                 SecondDishMoney = 15 + (DrinkType + 1) * 5;
-                foreach (GameObject Topping in DrinkTopping)
+                for(int i = 0; i < GameManager.GetUpgrade(4); i++)
                 {
-                    if (Random.Range(0, 2) == 1)
+                    if(Random.Range(0, 2) == 1)
                     {
-                        SecondDishMoney += ((DrinkTopping.IndexOf(Topping) + 1) * 5);
-                        Instantiate(Topping, Dish2.transform);
+                        SecondDishMoney += (i + 1) * 5;
+                        Instantiate(DrinkTopping[i],Dish2.transform);
                     }
                 }
             }
@@ -138,25 +156,40 @@ public class CustomerGenerator : MonoBehaviour
             {
                 Dish2 = Instantiate(Dish[Random.Range(0, Dish.Count)], OrderList.transform);
                 SecondDishMoney = 50;
-                foreach (GameObject Topping in DishTopping)
+                for (int i = 0; i < DishTopping.Count; i++)
                 {
-                    if (Random.Range(0, 2) == 1) {
-                        SecondDishMoney += ToppingMoney[DishTopping.IndexOf(Topping)];
-                        Instantiate(Topping, Dish2.transform);
-                    } 
+                    if (Random.Range(0, 2) == 1)
+                    {
+                        if (ToppingOrSauce[i])
+                        {
+                            if (ToppingOrSauceIndex[i] < GameManager.GetUpgrade(5))
+                            {
+                                SecondDishMoney += ToppingMoney[i];
+                                Instantiate(DishTopping[i], Dish2.transform);
+                            }
+                        }
+                        else
+                        {
+                            if (ToppingOrSauceIndex[i] < GameManager.GetUpgrade(3))
+                            {
+                                SecondDishMoney += ToppingMoney[i];
+                                Instantiate(DishTopping[i], Dish2.transform);
+                            }
+                        }
+                    }
                 }
             }
             Money.Add(SecondDishMoney);
-            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
-            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.4f);
+            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0f);
+            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.5f);
             Dish2.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.5f);
-            Dish2.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.9f);
+            Dish2.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 1f);
 
         }
         else
         {
-            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
-            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.9f);
+            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(1f, 1f);
         }
         return Money;
     }

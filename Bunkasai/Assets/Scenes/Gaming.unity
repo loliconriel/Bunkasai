@@ -374,6 +374,8 @@ MonoBehaviour:
   - {fileID: 4719342497003348147, guid: ec9bf74decb8a8746bcd01d078a64690, type: 3}
   - {fileID: 1664778662564297807, guid: d7105d957707041459232bb77181bb7b, type: 3}
   - {fileID: 7668381459725475661, guid: 489774d9045700d44ab056a4511cf2c3, type: 3}
+  ToppingOrSauce: 000100
+  ToppingOrSauceIndex: 000000000000000001000000
   Drink:
   - {fileID: 2752477901004263575, guid: 2195f4dc0075f8047ac829b38869244d, type: 3}
   - {fileID: 7331446121336250709, guid: e0bff992f3c75d045b8141999c05d090, type: 3}
@@ -8176,6 +8178,7 @@ GameObject:
   - component: {fileID: 2137145607}
   - component: {fileID: 2137145609}
   - component: {fileID: 2137145608}
+  - component: {fileID: 2137145610}
   m_Layer: 5
   m_Name: WaffleMakerArea
   m_TagString: Untagged
@@ -8245,6 +8248,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137145606}
   m_CullTransparentMesh: 1
+--- !u!114 &2137145610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137145606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb3c76e4d96b5c45a181431998b12d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Content: {fileID: 3266515441598161434, guid: 20e162b660f53b2498db4456632e70d6, type: 3}
+  ZeroAmount: 2
 --- !u!1001 &273990784064433385
 PrefabInstance:
   m_ObjectHideFlags: 0
