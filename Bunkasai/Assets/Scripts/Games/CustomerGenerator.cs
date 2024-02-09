@@ -180,16 +180,16 @@ public class CustomerGenerator : MonoBehaviour
                 }
             }
             Money.Add(SecondDishMoney);
-            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0f);
-            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.5f);
-            Dish2.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.5f);
-            Dish2.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 1f);
+            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.15f, 0f);
+            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.85f, 0.5f);
+            Dish2.GetComponent<RectTransform>().anchorMin = new Vector2(0.15f, 0.5f);
+            Dish2.GetComponent<RectTransform>().anchorMax = new Vector2(0.85f, 1f);
 
         }
         else
         {
-            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
-            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(1f, 1f);
+            Dish1.GetComponent<RectTransform>().anchorMin = new Vector2(0.1f, 0.1f);
+            Dish1.GetComponent<RectTransform>().anchorMax = new Vector2(0.9f, 0.9f);
         }
         return Money;
     }
