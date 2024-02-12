@@ -12,7 +12,7 @@ public class WaffleMakerGenerator : MonoBehaviour
     {
         Spawn();
     }
-    void Spawn()
+    public void Spawn()
     {
         foreach(Transform transform in transform)
         {

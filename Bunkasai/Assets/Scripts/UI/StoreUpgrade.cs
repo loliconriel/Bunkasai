@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class StoreUpgrade : MonoBehaviour
 {
-
+    [SerializeField]
+    GameObject PurchaseEffect;
     [SerializeField]
     Sprite[] image;
     [SerializeField]
@@ -46,6 +47,11 @@ public class StoreUpgrade : MonoBehaviour
             {
                 GameManager.MinusMoney(UpgradeAmount[NowLevel]);
                 GameManager.Upgrade(transform.GetSiblingIndex());
+                if(PurchaseEffect != null)
+                {
+                    GameObject Effect = Instantiate(PurchaseEffect);
+                    Destroy(Effect, Effect.GetComponent<AudioSource>().clip.length + 1f);
+                }
                 NowLevel++;
                 GetComponentInChildren<Image>().sprite = image[NowLevel];
                 if (NowLevel >= image.Length-1) text.text = "Lv.MAX";

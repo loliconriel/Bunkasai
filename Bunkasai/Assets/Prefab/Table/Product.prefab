@@ -307,5 +307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b3920e87faea143a4d0f31ce5cbbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PurchaseEffect: {fileID: 8164841781607428327, guid: 5544a7aae48f9d84dbb58b742289745a, type: 3}
   image: []
   UpgradeAmount: 

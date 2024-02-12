@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
@@ -15,6 +14,7 @@ public enum GameType
 }
 public class MenuController : MonoBehaviour
 {
+
     //不要去引用 Unity Editor 裡的東西 因為他只會在Unity編輯器裡生效 
     [Header("Start Game Type")]
     [Tooltip("Directly:Start Game directly.\n Customize: Customize Game and then start game")]
@@ -40,7 +40,6 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     [Tooltip("Place the gamesetting panel in here")]
     GameObject SettingPanel;
-
     private void Awake()
     {
         if(gameType == GameType.Directly)

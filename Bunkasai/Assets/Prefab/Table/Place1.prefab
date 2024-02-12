@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae7b003d2725344099c446fb0092213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SentSound: {fileID: 8164841781607428327, guid: 5544a7aae48f9d84dbb58b742289745a, type: 3}
 --- !u!114 &2496160706880962848
 MonoBehaviour:
   m_ObjectHideFlags: 0

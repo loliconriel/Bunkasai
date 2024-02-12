@@ -11,6 +11,7 @@ public class Cooker : MonoBehaviour
     private bool CookCheck = false;
     [SerializeField]
     Sprite[] sprite;
+    
 
     private GameObject Content;
     private GameObject TargetList;
@@ -63,6 +64,7 @@ public class Cooker : MonoBehaviour
                         Clock.fillAmount = 0f;
                         CookCheck = false;
                         GetComponent<Image>().sprite = sprite[0];
+                        
                         Debug.Log("Sent Success");
                         break;
                     }

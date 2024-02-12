@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Table : MonoBehaviour
 {
+    [SerializeField]
+    GameObject SentSound;
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(click);
@@ -15,7 +17,14 @@ public class Table : MonoBehaviour
         {
             if (CustomerOrder.Compare(transform.GetChild(0).gameObject))
             {
+
                 Destroy(transform.GetChild(0).gameObject);
+
+                if (SentSound != null)
+                {
+                    GameObject Sound = Instantiate(SentSound, transform);
+                    Destroy(Sound, Sound.GetComponent<AudioSource>().clip.length + 1f);
+                }
             }
             
         }
