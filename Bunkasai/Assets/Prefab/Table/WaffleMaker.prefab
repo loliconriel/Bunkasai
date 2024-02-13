@@ -139,6 +139,7 @@ MonoBehaviour:
   sprite:
   - {fileID: 21300000, guid: 63e1efebe1ee9c84fb0eeec996e8817e, type: 3}
   - {fileID: 21300000, guid: 50a862a5d6ac12640bdd340556e1e3ed, type: 3}
+  CookEffectPrefab: {fileID: 6953359958882252250, guid: bde336f2f6c0fc4408561e261258271f, type: 3}
 --- !u!114 &7703858581513219111
 MonoBehaviour:
   m_ObjectHideFlags: 0

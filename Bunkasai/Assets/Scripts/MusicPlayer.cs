@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -44,7 +45,7 @@ public class MusicPlayer : MonoBehaviour
         }
         
     }
-    public void Pause()
+    public static void Pause()
     {
         AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
         foreach(AudioSource source in audioSources)
@@ -54,8 +55,7 @@ public class MusicPlayer : MonoBehaviour
             {
                 if (source.clip != null)
                 {
-                    Debug.Log(source.clip.name);
-                    foreach(AudioClip clip in PauseEffectSource)
+                    foreach(AudioClip clip in instance.PauseEffectSource)
                     {
                         if (clip.name == source.clip.name)
                         {
@@ -65,6 +65,29 @@ public class MusicPlayer : MonoBehaviour
                     }
                 }
                 
+            }
+        }
+    } 
+    public static void DestoryEffect()
+    {
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource source in audioSources)
+        {
+
+            if (source.isActiveAndEnabled == true)
+            {
+                if (source.clip != null)
+                {
+                    Debug.Log(source.clip.name);
+                    foreach (AudioClip clip in instance.PauseEffectSource)
+                    {
+                        if (clip.name == source.clip.name)
+                        {
+                            Destroy(source.gameObject);
+                        }
+                    }
+                }
+
             }
         }
     }

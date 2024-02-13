@@ -23,15 +23,18 @@ public class Customer : MonoBehaviour
 
     List<int> DishMoney = new List<int>();
     GameObject OrderPanel;
-    public void Init(Vector3 Speed,Vector3 StayPosition,Vector3 EndPosition,List<int> Money)
+    GameObject OrderEffect;
+    public void Init(Vector3 Speed, Vector3 StayPosition, Vector3 EndPosition, List<int> Money, GameObject OrderEffect)
     {
         this.Speed = Speed;
         this.StayPosition = StayPosition;
         this.EndPosition = EndPosition;
+        this.OrderEffect = OrderEffect;
         CustomerStatus = Status.Enter;
         LeaveTime *= GameManager.GetCustomerPassionate();
         WaitingTime = 0f;
         OrderPanel = transform.GetChild(0).gameObject;
+        
         foreach (int i in Money)
         {
             DishMoney.Add((int)(i *GameManager.GetPayAmount()));
@@ -94,6 +97,12 @@ public class Customer : MonoBehaviour
     {
         OrderPanel.SetActive(true);
         for (int i = 0; i < transform.GetChild(0).GetChild(1).childCount; i++){
+            if (OrderEffect != null)
+            {
+                Destroy(Instantiate(OrderEffect), OrderEffect.GetComponent<AudioSource>().clip.length + 1f);
+            }
+            
+            
             CustomerOrder.Add(transform.parent.GetSiblingIndex(), DishMoney[i], transform.GetChild(0).GetChild(1).GetChild(i).gameObject);
         }
         

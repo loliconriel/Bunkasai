@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CustomerGenerator : MonoBehaviour
 {
-    
+    [SerializeField]
+    private GameObject OrderEffectPrefab;
     [SerializeField]
     private GameObject SpawnList;
     [SerializeField]
@@ -70,9 +71,9 @@ public class CustomerGenerator : MonoBehaviour
                     Money = GenerateOrder(SpawnCustomer.transform.GetChild(0).GetChild(1).gameObject);
                     if (Spawnnumber == 0)
                     {
-                        CustomerInit.Init(Speed, SpawnCustomer.transform.parent.position, SpawnList.transform.GetChild(1).position,Money);
+                        CustomerInit.Init(Speed, SpawnCustomer.transform.parent.position, SpawnList.transform.GetChild(1).position, Money, OrderEffectPrefab);
                     }
-                    else CustomerInit.Init(-Speed, SpawnCustomer.transform.parent.position, SpawnList.transform.GetChild(0).position,Money);
+                    else CustomerInit.Init(-Speed, SpawnCustomer.transform.parent.position, SpawnList.transform.GetChild(0).position, Money, OrderEffectPrefab);
                 }
                 
             }

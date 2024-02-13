@@ -10,6 +10,8 @@ public class ManagerTrigger : MonoBehaviour
     string PlayScene;
     [SerializeField]
     GameObject ShopPanel;
+    [SerializeField]
+    GameObject EndPanel;
     private void Start()
     {
         if(SceneManager.GetActiveScene().name == PlayScene)

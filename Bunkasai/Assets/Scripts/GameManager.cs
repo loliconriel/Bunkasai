@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
                 if(instance.CurrentRound+1 < instance.TotalRound)
                 {
                     ShopPanel.SetActive(true);
+                    MusicPlayer.DestoryEffect();
                 }
                 else
                 {

@@ -11,13 +11,14 @@ public class Drink : Ingredient
         Idle
     }
     [SerializeField]
-    GameObject PouringEffect;
+    GameObject PouringEffectPrefab;
     [SerializeField]
     private float CookTime;
     private float ReadyTime;
     private float NowTime;
     private Image Clock;
     private Status status;
+    GameObject PouringEffect;
     void Awake()
     {
         status = Status.Idle;
@@ -58,11 +59,10 @@ public class Drink : Ingredient
         if(status == Status.Idle)
         {
             Init();
-            if (PouringEffect != null)
+            if (PouringEffectPrefab != null)
             {
-                GameObject Effect = Instantiate(PouringEffect);
-                Effect.GetComponent<AudioSource>().pitch = Effect.GetComponent<AudioSource>().clip.length / ReadyTime;
-                Destroy(Effect, Effect.GetComponent<AudioSource>().clip.length / ReadyTime + 1f);
+                PouringEffect = Instantiate(PouringEffectPrefab);
+                PouringEffect.GetComponent<AudioSource>().pitch = PouringEffect.GetComponent<AudioSource>().clip.length / ReadyTime;
             }
             //Instantiate(Content, transform);
             status = Status.Make;
@@ -76,7 +76,10 @@ public class Drink : Ingredient
                     if (item.childCount <= 0)
                     {
                         Instantiate(Content, item.transform);
-                        
+                        if (PouringEffect != null)
+                        {
+                            Destroy(PouringEffect);
+                        }
                         Init();
                         break;
                     }

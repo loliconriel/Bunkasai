@@ -144,4 +144,5 @@ MonoBehaviour:
   PauseEffectSource:
   - {fileID: 8300000, guid: be395b6faf11c064f89dc64a7931f6f3, type: 3}
   - {fileID: 8300000, guid: 8a21ea2778271964a81073ae835e4c94, type: 3}
+  - {fileID: 8300000, guid: 0164ab8d9b623ae46a924804aef34b5e, type: 3}
   audioClips: []

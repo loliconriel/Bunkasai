@@ -139,7 +139,7 @@ MonoBehaviour:
   FinalContent: {fileID: 0}
   TargetList: {fileID: 0}
   FinalList: {fileID: 0}
-  PouringEffect: {fileID: 2945662949274994006, guid: 576861675796f734e97c1ec290562d0d, type: 3}
+  PouringEffectPrefab: {fileID: 2945662949274994006, guid: 576861675796f734e97c1ec290562d0d, type: 3}
   CookTime: 3
 --- !u!1001 &5498461105129999622
 PrefabInstance:

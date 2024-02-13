@@ -11,8 +11,10 @@ public class Cooker : MonoBehaviour
     private bool CookCheck = false;
     [SerializeField]
     Sprite[] sprite;
-    
+    [SerializeField]
+    GameObject CookEffectPrefab;
 
+    private GameObject CookEffect;
     private GameObject Content;
     private GameObject TargetList;
     private Image Clock;
@@ -48,6 +50,13 @@ public class Cooker : MonoBehaviour
         Clock.color = Color.green;
         Clock.fillAmount = 0f;
         GetComponent<Image>().sprite = sprite[1];
+        if (CookEffectPrefab != null)
+        {
+            CookEffect = Instantiate(CookEffectPrefab);
+            CookEffect.GetComponent<AudioSource>().pitch = CookEffect.GetComponent<AudioSource>().clip.length / MuddyTime;
+
+        }
+
     }
     private void click()
     {
@@ -64,6 +73,7 @@ public class Cooker : MonoBehaviour
                         Clock.fillAmount = 0f;
                         CookCheck = false;
                         GetComponent<Image>().sprite = sprite[0];
+                        if (CookEffectPrefab != null) Destroy(CookEffect);
                         
                         Debug.Log("Sent Success");
                         break;
@@ -88,6 +98,7 @@ public class Cooker : MonoBehaviour
             {
                 Destroy(transform.GetChild(1).gameObject);
                 GetComponent<Image>().sprite = sprite[0];
+                if (CookEffectPrefab != null) Destroy(CookEffect);
                 Debug.Log("Sent to trash");
             }
         }
