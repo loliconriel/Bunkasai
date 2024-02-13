@@ -5,9 +5,17 @@ using UnityEngine.UI;
 
 public class GameClock : MonoBehaviour
 {
+    Slider slider;
     
+    private void Start()
+    {
+        slider = GetComponent<Slider>();
+    }
     void Update()
     {
-        GetComponent<Slider>().value = GameManager.GetRemainTime();
+
+        slider.value = GameManager.GetRemainTime();
+        
+        
     }
 }

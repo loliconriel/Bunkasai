@@ -743,7 +743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5353,7 +5353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1326774886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5611,8 +5611,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: badb978c823c33447961d642da5659cc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6688,6 +6688,7 @@ GameObject:
   - component: {fileID: 1478578277}
   - component: {fileID: 1478578278}
   - component: {fileID: 1478578279}
+  - component: {fileID: 1478578280}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -6778,6 +6779,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a067f1183459eaa4aa6d494ccded74df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1478578280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478578276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2cae41f71cc214fbbe268d3d5f1dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1545408407
