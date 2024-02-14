@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 56559712}
   m_Layer: 5
   m_Name: Setting
-  m_TagString: Untagged
+  m_TagString: NormalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 324544479}
   m_Layer: 5
   m_Name: Close
-  m_TagString: Untagged
+  m_TagString: NormalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 667578400}
   m_Layer: 5
   m_Name: Start
-  m_TagString: Untagged
+  m_TagString: NormalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 677542797}
   m_Layer: 5
   m_Name: Close
-  m_TagString: Untagged
+  m_TagString: NormalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 947152628}
   m_Layer: 5
   m_Name: Quit
-  m_TagString: Untagged
+  m_TagString: NormalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3699,7 +3699,7 @@ GameObject:
   - component: {fileID: 1807046217}
   m_Layer: 5
   m_Name: CustomizeButton
-  m_TagString: Untagged
+  m_TagString: NormalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4491,6 +4491,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a7d68a281b3523449a06f46e1e39c2e, type: 3}
+--- !u!1001 &4981478412174217205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755161, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981478413872755167, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec2ec3e018c1b6340b35d53a28fce25f, type: 3}
 --- !u!224 &5931042157556550934 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 527042366928706563, guid: da3c8493806bb274eb315d0a9f419332, type: 3}

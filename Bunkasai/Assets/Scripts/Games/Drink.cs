@@ -21,12 +21,13 @@ public class Drink : Ingredient
     GameObject PouringEffect;
     void Awake()
     {
-        status = Status.Idle;
         Clock = transform.GetChild(0).GetComponent<Image>();
+
+        status = Status.Idle;
         Clock.color = Color.green;
         Clock.fillAmount = 0f;
-
         NowTime = 0f;
+        
         GetComponent<Button>().onClick.AddListener(action);
         if(FinalList == null)
         {
