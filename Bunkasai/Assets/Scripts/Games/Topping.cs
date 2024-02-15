@@ -65,9 +65,9 @@ public class Topping : MonoBehaviour
             
         }
     }
-    public void SetTargetList(Transform Target)
+    public void SetTargetList(GameObject Target)
     {
-        this.TargetList = Target.gameObject;
+        this.TargetList = Target;
     }
 
 }

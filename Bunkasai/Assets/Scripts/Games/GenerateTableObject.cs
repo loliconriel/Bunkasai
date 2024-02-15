@@ -43,7 +43,7 @@ public class GenerateTableObject : MonoBehaviour
             }
             if(TargetList != null)
             {
-                NewObject.GetComponent<Topping>().SetTargetList(TargetList.transform);
+                NewObject.GetComponent<Topping>().SetTargetList(TargetList);
             }
         }
     }

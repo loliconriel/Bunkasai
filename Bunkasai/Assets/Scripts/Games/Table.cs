@@ -22,7 +22,7 @@ public class Table : MonoBehaviour
 
                 if (SentSound != null)
                 {
-                    GameObject Sound = Instantiate(SentSound, transform);
+                    GameObject Sound = Instantiate(SentSound);
                     Destroy(Sound, Sound.GetComponent<AudioSource>().clip.length + 1f);
                 }
             }
