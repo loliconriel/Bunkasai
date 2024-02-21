@@ -26,7 +26,6 @@ public class GenerateTableObject : MonoBehaviour
             Destroy(game.gameObject);
         }
         GameObject NewObject;
-        //Debug.Log(gameObject.name + " " + GameManager.GetUpgrade(Upgradeindex));
         for (int i = 0; i < GameManager.GetUpgrade(Upgradeindex) + ZeroAmount; i++)
         {
             
