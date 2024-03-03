@@ -379,7 +379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u65B0\u624B\u6559\u5B78"
+  m_text: "\u7C21\u55AE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2413,7 +2413,7 @@ RectTransform:
   m_Father: {fileID: 900612020}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.45, y: 0.25}
+  m_AnchorMin: {x: 0.1, y: 0.25}
   m_AnchorMax: {x: 0.9, y: 0.7}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -3211,7 +3211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1615693542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3922,7 +3922,7 @@ RectTransform:
   m_Father: {fileID: 900612020}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.45, y: 0.7}
+  m_AnchorMin: {x: 0.1, y: 0.7}
   m_AnchorMax: {x: 0.9, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -3977,15 +3977,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "\u65B0\u624B\u6559\u5B78"
-      m_Image: {fileID: 0}
     - m_Text: "\u7C21\u55AE"
       m_Image: {fileID: 0}
     - m_Text: "\u666E\u901A"
       m_Image: {fileID: 0}
     - m_Text: "\u56F0\u96E3"
-      m_Image: {fileID: 0}
-    - m_Text: "\u7121\u76E1"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4043,31 +4039,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DifficultyDetail: {fileID: 1170189786}
   DifficultyDetailText:
-  - "\u56DE\u5408\u6578 : 1 \u76EE\u6A19\u91D1\u984D : 1000 \u5668\u5177\u89E3\u9396
-    : \u5668\u5177\u9F4A\u5168 \u9867\u5BA2\u8010\u5FC3 : \u6162\u6162\u4F86\u5C31\u597D
-    \u9867\u5BA2\u5149\u81E8\u901F\u5EA6 : \u6B63\u5E38 \u9867\u5BA2\u652F\u4ED8\u91D1\u984D
-    : \u6177\u6168 \u9867\u5BA2\u79FB\u52D5\u901F\u5EA6 : \u5FEB\u901F \u6599\u7406\u70F9\u98EA\u6642\u9593
-    : \u5927\u5E45\u7E2E\u77ED \u6599\u7406\u71D2\u7126\u6642\u9593 : \u5927\u5E45\u5EF6\u9577"
-  - "\u56DE\u5408\u6578 : 1 \u76EE\u6A19\u91D1\u984D : 1000 \u5668\u5177\u89E3\u9396
-    : \u5668\u5177\u9F4A\u5168 \u9867\u5BA2\u8010\u5FC3 : \u6162\u6162\u4F86\u5C31\u597D
-    \u9867\u5BA2\u5149\u81E8\u901F\u5EA6 : \u6B63\u5E38 \u9867\u5BA2\u652F\u4ED8\u91D1\u984D
-    : \u6177\u6168 \u9867\u5BA2\u79FB\u52D5\u901F\u5EA6 : \u5FEB\u901F \u6599\u7406\u70F9\u98EA\u6642\u9593
-    : \u5927\u5E45\u7E2E\u77ED \u6599\u7406\u71D2\u7126\u6642\u9593 : \u5927\u5E45\u5EF6\u9577"
-  - "\u56DE\u5408\u6578 : 3 \u76EE\u6A19\u91D1\u984D : 4000 \u5668\u5177\u89E3\u9396
-    : \u7A0D\u6709\u6E96\u5099 \u9867\u5BA2\u8010\u5FC3 : \u6B63\u5E38 \u9867\u5BA2\u5149\u81E8\u901F\u5EA6
-    : \u6B63\u5E38 \u9867\u5BA2\u652F\u4ED8\u91D1\u984D : \u6B63\u5E38 \u9867\u5BA2\u79FB\u52D5\u901F\u5EA6
-    : \u6B63\u5E38 \u6599\u7406\u70F9\u98EA\u6642\u9593 : \u6B63\u5E38 \u6599\u7406\u71D2\u7126\u6642\u9593
+  - "\u56DE\u5408\u6578 : 1 \u76EE\u6A19\u91D1\u984D : 1000<br>\u5668\u5177\u89E3\u9396
+    : \u5668\u5177\u9F4A\u5168 \u9867\u5BA2\u8010\u5FC3 : \u6162\u6162\u4F86\u5C31\u597D<br>\u9867\u5BA2\u5149\u81E8\u901F\u5EA6
+    : \u6B63\u5E38 \u9867\u5BA2\u652F\u4ED8\u91D1\u984D : \u6177\u6168<br>\u9867\u5BA2\u79FB\u52D5\u901F\u5EA6
+    : \u5FEB\u901F \u6599\u7406\u70F9\u98EA\u6642\u9593 : \u5927\u5E45\u7E2E\u77ED<br>\u6599\u7406\u71D2\u7126\u6642\u9593
+    : \u5927\u5E45\u5EF6\u9577"
+  - "\u56DE\u5408\u6578 : 3 \u76EE\u6A19\u91D1\u984D : 4000<br>\u5668\u5177\u89E3\u9396
+    : \u7A0D\u6709\u6E96\u5099 \u9867\u5BA2\u8010\u5FC3 : \u6B63\u5E38<br>\u9867\u5BA2\u5149\u81E8\u901F\u5EA6
+    : \u6B63\u5E38 \u9867\u5BA2\u652F\u4ED8\u91D1\u984D : \u6B63\u5E38<br>\u9867\u5BA2\u79FB\u52D5\u901F\u5EA6
+    : \u6B63\u5E38 \u6599\u7406\u70F9\u98EA\u6642\u9593 : \u6B63\u5E38<br>\u6599\u7406\u71D2\u7126\u6642\u9593
     : \u6B63\u5E38"
-  - "\u56DE\u5408\u6578 : 6 \u76EE\u6A19\u91D1\u984D : 10000 \u5668\u5177\u89E3\u9396
-    : \u6BEB\u7121\u6E96\u5099 \u9867\u5BA2\u8010\u5FC3 : \u5341\u5206\u7126\u8E81
-    \u9867\u5BA2\u5149\u81E8\u901F\u5EA6 : \u4F4D\u7F6E\u504F\u907F \u9867\u5BA2\u652F\u4ED8\u91D1\u984D
-    : \u5C0F\u6C23 \u9867\u5BA2\u79FB\u52D5\u901F\u5EA6 : \u7DE9\u6162 \u6599\u7406\u70F9\u98EA\u6642\u9593
-    : \u7DE9\u6162 \u6599\u7406\u71D2\u7126\u6642\u9593 : \u7DE9\u6162"
-  - "\u56DE\u5408\u6578 : \u7121\u9650 \u76EE\u6A19\u91D1\u984D : \u7121 \u5668\u5177\u89E3\u9396
-    : \u6BEB\u7121\u6E96\u5099 \u9867\u5BA2\u8010\u5FC3 : \u5341\u5206\u7126\u8E81
-    \u9867\u5BA2\u5149\u81E8\u901F\u5EA6 : \u4F4D\u7F6E\u504F\u907F \u9867\u5BA2\u652F\u4ED8\u91D1\u984D
-    : \u5C0F\u6C23 \u9867\u5BA2\u79FB\u52D5\u901F\u5EA6 : \u7DE9\u6162 \u6599\u7406\u70F9\u98EA\u6642\u9593
-    : \u7DE9\u6162 \u6599\u7406\u71D2\u7126\u6642\u9593 : \u7DE9\u6162"
+  - "\u56DE\u5408\u6578 : 6 \u76EE\u6A19\u91D1\u984D : 10000<br>\u5668\u5177\u89E3\u9396
+    : \u6BEB\u7121\u6E96\u5099 \u9867\u5BA2\u8010\u5FC3 : \u5341\u5206\u7126\u8E81<br>\u9867\u5BA2\u5149\u81E8\u901F\u5EA6
+    : \u4F4D\u7F6E\u504F\u907F \u9867\u5BA2\u652F\u4ED8\u91D1\u984D : \u5C0F\u6C23<br>\u9867\u5BA2\u79FB\u52D5\u901F\u5EA6
+    : \u7DE9\u6162 \u6599\u7406\u70F9\u98EA\u6642\u9593 : \u7DE9\u6162<br>\u6599\u7406\u71D2\u7126\u6642\u9593
+    : \u7DE9\u6162"
 --- !u!1 &2016054842
 GameObject:
   m_ObjectHideFlags: 0

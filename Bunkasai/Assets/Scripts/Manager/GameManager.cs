@@ -78,19 +78,17 @@ public class GameManager : MonoBehaviour
     {
         switch (Difficulty)
         {
+
             case 0:
-                GameSet(new int[8] { 1, 2, 2, 2, 2, 3, -1, -1 }, 1, 1000, 1.5f, 1f, 1.5f, 1.2f, 0.5f, 1.5f);
-                break;
-            case 1:
                 GameSet(new int[8] { 1, 2, 2, 2, 2, 3, -1, -1 },1, 1000, 1.5f, 1f, 1.5f, 1.2f, 0.5f, 1.5f);
                 break;
-            case 2:
+            case 1:
                 GameSet(new int[8] { 1, 1, 1, 1, 1, 2, -1, -1 },3, 4000, 1f, 1f, 1f, 1f, 1f, 1f);
                 break;
-            case 3:
+            case 2:
                 GameSet(6, 10000, 0.8f, 1.3f, 0.8f, 0.8f, 1.2f, 0.8f);
                 break;
-            case 4:
+            case 3:
                 GameSet(6, 10000, 0.8f, 1.3f, 0.8f, 0.8f, 1.2f, 0.8f);
                 break;
         }
@@ -190,6 +188,10 @@ public class GameManager : MonoBehaviour
     public static int GetMoeny()
     {
         return instance.NowMoney;
+    }
+    public static int GetTargetMoney()
+    {
+        return instance.TargetMoney;
     }
     public static void Upgrade(int index)
     {
