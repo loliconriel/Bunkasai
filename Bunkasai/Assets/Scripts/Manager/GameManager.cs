@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private bool GamePlayCheck;
     private bool GamePlayEnd;
 
-    private int NowMoney = 100;
+    private int NowMoney = 0;
     private int CurrentRound = 0;
     private int TotalRound = 1;
     private int TargetMoney = 1000;

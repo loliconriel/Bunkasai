@@ -368,17 +368,17 @@ MonoBehaviour:
   StayList: {fileID: 1056919163}
   Customer:
   - {fileID: 3704771038601097940, guid: 3b14af969cef23745a49426afcd4fb82, type: 3}
-  SpawnTime: 4
+  SpawnTime: 8
   Dish:
   - {fileID: 339003673456320223, guid: 38128abd72f4706499736f45f8f9fac9, type: 3}
   DishTopping:
-  - {fileID: 4719342497003348147, guid: ec9bf74decb8a8746bcd01d078a64690, type: 3}
   - {fileID: 1664778662564297807, guid: d7105d957707041459232bb77181bb7b, type: 3}
   - {fileID: 8144910182741914267, guid: 9d1c4785f22cb9b4483cf6fd59948e5e, type: 3}
   - {fileID: 2398195481495315938, guid: 592d8d38ad7cd6740aea8bff7e624876, type: 3}
   - {fileID: 7668381459725475661, guid: 489774d9045700d44ab056a4511cf2c3, type: 3}
-  ToppingOrSauce: 0001010100
-  ToppingOrSauceIndex: 0000000000000000010000000200000001000000
+  - {fileID: 4719342497003348147, guid: ec9bf74decb8a8746bcd01d078a64690, type: 3}
+  ToppingOrSauce: 0101010000
+  ToppingOrSauceIndex: 0000000001000000020000000100000000000000
   Drink:
   - {fileID: 2752477901004263575, guid: 2195f4dc0075f8047ac829b38869244d, type: 3}
   - {fileID: 7331446121336250709, guid: e0bff992f3c75d045b8141999c05d090, type: 3}
@@ -1852,7 +1852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &392229172
 RectTransform:
   m_ObjectHideFlags: 0
