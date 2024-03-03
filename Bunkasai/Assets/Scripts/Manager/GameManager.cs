@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private int NowCustomer = 0;
     private GameObject ShopPanel;
+    private GameObject EndPanel;
     private void Awake()
     {
         if(instance == null)
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    EndPanel.SetActive(true);
                     Debug.Log("Game End!");
                 }
                 
@@ -221,8 +223,9 @@ public class GameManager : MonoBehaviour
     {
         return instance.DishMuddyTime;
     }
-    public static void SetShopePanel(GameObject Panel)
+    public static void SetPanel(GameObject Shop,GameObject End)
     {
-        instance.ShopPanel = Panel;
+        instance.ShopPanel = Shop;
+        instance.EndPanel = End;
     }
 }

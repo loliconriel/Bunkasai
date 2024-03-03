@@ -17,7 +17,7 @@ public class ManagerTrigger : MonoBehaviour
         if(SceneManager.GetActiveScene().name == PlayScene)
         {
             GameManager.Init();
-            GameManager.SetShopePanel(ShopPanel);
+            GameManager.SetPanel(ShopPanel,EndPanel);
             GameManager.StartGame();
         }
         else
