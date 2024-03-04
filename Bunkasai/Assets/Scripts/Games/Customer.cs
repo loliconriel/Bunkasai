@@ -18,7 +18,7 @@ public class Customer : MonoBehaviour
 
     Status CustomerStatus;
 
-    float LeaveTime = 10f;
+    float LeaveTime = 15f;
     float WaitingTime;
 
     List<int> DishMoney = new List<int>();
