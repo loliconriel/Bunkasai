@@ -368,7 +368,7 @@ MonoBehaviour:
   StayList: {fileID: 1056919163}
   Customer:
   - {fileID: 3704771038601097940, guid: 3b14af969cef23745a49426afcd4fb82, type: 3}
-  SpawnTime: 8
+  SpawnTime: 7
   Dish:
   - {fileID: 339003673456320223, guid: 38128abd72f4706499736f45f8f9fac9, type: 3}
   DishTopping:
@@ -563,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[0]
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1596723655239853027, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: m_Pivot.x
@@ -1332,11 +1332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[1]
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1596723655239853027, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: m_Pivot.x
@@ -2675,11 +2675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[0]
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[1]
-      value: 1
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1596723655239853027, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: m_Pivot.x
@@ -3154,11 +3154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[1]
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1596723655239853027, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: m_Pivot.x
@@ -5394,11 +5394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[1]
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1596723655239853027, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: m_Pivot.x
@@ -6022,15 +6022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[1]
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -6957386388475336720, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: UpgradeAmount.Array.data[2]
-      value: 1
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1596723655239853027, guid: 840d344af6d7a4849838a6e8922f74b5, type: 3}
       propertyPath: m_Pivot.x
