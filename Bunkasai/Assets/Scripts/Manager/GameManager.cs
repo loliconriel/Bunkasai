@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
                 GameSet(new int[8] { 1, 1, 1, 1, 1, 2, -1, -1 },3, 4000, 1f, 1f, 1f, 1f, 1f, 1f);
                 break;
             case 2:
-                GameSet(6, 10000, 0.8f, 1.3f, 0.8f, 0.8f, 1.2f, 0.8f);
+                GameSet(6, 10000, 0.8f, 0.7f, 0.8f, 0.8f, 1.2f, 0.8f);
                 break;
             case 3:
                 GameSet(6, 10000, 0.8f, 1.3f, 0.8f, 0.8f, 1.2f, 0.8f);
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     }
     private static void GameSet(int[] UpgradeList,int TotalRound = 1, int TargetMoney = 1000, float CustomerPassionate = 1.5f, float CustomerVisitSpeed = 1f, float PayAmount = 1.5f, float CustomerSpeed = 1.2f, float DishCookTime = 0.5f, float DishMuddyTime = 1.5f)
     {
-        instance.NowMoney = 100;
+        instance.NowMoney = 0;
         instance.CurrentRound = 0;
         instance.NowCustomer = 0;
         instance.TotalRound = TotalRound;
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     }
     private static void GameSet(int TotalRound = 1, int TargetMoney = 1000, float CustomerPassionate = 1.5f, float CustomerVisitSpeed = 1f, float PayAmount = 1.5f, float CustomerSpeed = 1.2f, float DishCookTime = 0.5f, float DishMuddyTime = 1.5f)
     {
-        instance.NowMoney = 100;
+        instance.NowMoney = 0;
         instance.CurrentRound = 0; 
         instance.TotalRound = TotalRound;
         instance.TargetMoney = TargetMoney;
