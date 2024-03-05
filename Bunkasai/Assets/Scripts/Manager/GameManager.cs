@@ -86,10 +86,10 @@ public class GameManager : MonoBehaviour
                 GameSet(new int[8] { 1, 1, 1, 1, 1, 2, -1, -1 },3, 4000, 1f, 1f, 1f, 1f, 1f, 1f);
                 break;
             case 2:
-                GameSet(6, 10000, 0.8f, 0.7f, 0.8f, 0.8f, 1.2f, 0.8f);
+                GameSet(6, 8000, 0.8f, 0.7f, 0.8f, 0.8f, 1.2f, 0.8f);
                 break;
             case 3:
-                GameSet(6, 10000, 0.8f, 1.3f, 0.8f, 0.8f, 1.2f, 0.8f);
+                GameSet(6, 8000, 0.8f, 0.7f, 0.8f, 0.8f, 1.2f, 0.8f);
                 break;
         }
     }
